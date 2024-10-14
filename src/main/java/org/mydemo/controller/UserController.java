@@ -8,6 +8,7 @@ import org.mydemo.dto.UserUsernamePwdDTO;
 import org.mydemo.entity.UserEntity;
 import org.mydemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RefreshScope // Refresh for update configuration automatically, calling POST localhost:8080/actuator/refresh
 @RestController
 @RequestMapping("/users")
 public class UserController {
